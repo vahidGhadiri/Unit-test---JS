@@ -5,10 +5,8 @@ import style from "./Header.module.scss"
 const Header = () => {
     return (
         <header data-test="header-component">
-            <div className={style.wrap}>
-                <div>
-                    <img src={Logo} alt="Logo" data-test="logo-image"/>
-                </div>
+            <div className={style.wrap} data-test="wrapper">
+                <img src={Logo} alt="Logo" data-test="logo-image"/>
             </div>
         </header>
     )

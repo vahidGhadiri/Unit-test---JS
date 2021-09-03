@@ -15,10 +15,17 @@ describe("Header Component", () => {
     beforeEach(() => {
         component = setup()
     })
+
     test("Should render without error", () => {
         const wrapper = findByTestAttribute(component, "header-component")
         expect(wrapper.length).toEqual(1)
     })
+
+    test("Should contain a wrapper", () => {
+        const wrapper = findByTestAttribute(component, "wrapper")
+        expect(wrapper.length).toEqual(1)
+    })
+
     test("Should contain a logo", () => {
         const logo = findByTestAttribute(component, "logo-image")
         expect(logo.length).toEqual(1)

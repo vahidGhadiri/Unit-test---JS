@@ -1,4 +1,9 @@
+import checkPropTypes from "check-prop-types"
+
 export const findByTestAttribute = (component, attribute) => {
-    const wrapper = component.find(`[data-test="${attribute}"]`)
-    return wrapper
+    return component.find(`[data-test="${attribute}"]`)
+}
+
+export const checkProps = (component, expectedProps) => {
+    return checkPropTypes(component.propTypes, expectedProps, "props", component.name)
 }

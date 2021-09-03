@@ -19,7 +19,10 @@ class Headline extends React.Component {
 
 Headline.propTypes = {
     header: PropTypes.string,
-    description: PropTypes.string
+    description: PropTypes.string,
+    tempArr: PropTypes.arrayOf(PropTypes.shape({
+
+    }))
 }
 
 export default Headline

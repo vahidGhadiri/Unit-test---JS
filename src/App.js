@@ -1,9 +1,11 @@
 import React from "react"
+import {Header} from "./components/index"
+import "./App.scss"
 
 export const App = () => {
-    return(
+    return (
         <div>
-            App component
+            <Header/>
         </div>
     )
 }

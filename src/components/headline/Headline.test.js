@@ -21,12 +21,13 @@ describe("headline Component", () => {
                     firstName: "Test First Name",
                     lastName: "Test Last Name",
                     job: "Test Job",
-                    age: 30,
+                    age: 100,
                     email: "Test@test.com",
                     isMarried: "false"
                 }]
             }
             const propsErr = checkProps(Headline, expectedProps)
+            console.log(propsErr)
             expect(propsErr).toBeUndefined()
         })
     })

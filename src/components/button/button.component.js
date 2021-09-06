@@ -1,28 +1,28 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
-class Button extends React.Component {
+class Button extends Component {
 
-    submitEvent = () => {
-        // if (this.props.emitEvent) {
-        //     this.props.emitEvent()
-        // }
-        console.log("vahid")
+    submitEvent() {
+        if (this.props.emitEvent) {
+            this.props.emitEvent();
+        }
     }
 
     render() {
-        const {buttonText} = this.props
+        const {buttonText} = this.props;
+
         return (
-            <Button onClick={() => this.submitEvent()} data-test="button-component">
+            <button onClick={() => this.submitEvent()} data-test="button-component">
                 {buttonText}
-            </Button>
-        )
+            </button>
+        );
     }
 }
 
 Button.propTypes = {
     buttonText: PropTypes.string,
     emitEvent: PropTypes.func
-}
+};
 
-export default Button
+export default Button;

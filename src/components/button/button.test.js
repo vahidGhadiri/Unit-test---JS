@@ -2,7 +2,7 @@ import React from "react"
 import {shallow} from "enzyme"
 
 import {checkProps, findByTestAttribute} from "../../utils/functions/helper";
-import Button from "./button.component";
+import {Button} from "../index"
 
 
 describe("BUTTON COMPONENT", () => {

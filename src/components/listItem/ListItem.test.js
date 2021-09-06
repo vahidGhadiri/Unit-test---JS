@@ -41,4 +41,18 @@ describe("LISTITEM COMPONENT", () => {
             expect(desc.length).toEqual(1)
         })
     })
+
+    describe("Should NOT Render", () => {
+        let wrapper;
+        beforeEach(() => {
+            const props = {
+                desc: "test"
+            }
+            wrapper = shallow(<ListItem {...props}/>)
+        })
+        test("sample", () => {
+            const component = findByTestAttribute(wrapper, "listItem-component")
+            expect(component.length).toEqual(0)
+        })
+    })
 })

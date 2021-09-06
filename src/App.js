@@ -1,5 +1,5 @@
 import React from "react"
-import {Header, Headline} from "./components/index"
+import {Header, Headline, Button} from "./components/index"
 import "./App.scss"
 
 const tempArr = [{

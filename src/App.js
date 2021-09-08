@@ -13,7 +13,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <div data-test="app-component">
                 <Header/>
                 <section className="main">
                     <Headline header="Posts" description="Click the button to render posts!" tempArr={tempArr}/>

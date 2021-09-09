@@ -9,18 +9,43 @@ import "./App.scss"
 
 
 class App extends React.Component {
-    fetch = () => this.props.fetchPosts()
+    constructor(props) {
+        super(props);
+        this.state = {
+            isBtnHide: false
+        }
+    }
+
+    changeBtnVisibility = () => {
+        const {isBtnHide} = this.state
+        this.setState({
+            isBtnHide: !isBtnHide
+        })
+    }
+
+
+    fetch = async () => {
+        await this.props.fetchPosts()
+        await this.changeBtnVisibility()
+    }
+
+    sampleFunction_returnsValue = (number) => {
+        return number + 1
+    }
 
     render() {
+        const {posts} = this.props
+        const {isBtnHide} = this.state
         return (
             <div data-test="app-component">
                 <Header/>
                 <section className="main">
-                    <Headline header="Posts" description="Click the button to render posts!" tempArr={tempArr}/>
-                    <Button buttonText="GET POSTS" emitEvent={this.fetch}/>
-                    {this.props.posts.length > 0 &&
+                    {!isBtnHide &&
+                    <Headline header="Posts" description="Click the button to render posts!" tempArr={tempArr}/>}
+                    {!isBtnHide && <Button buttonText="GET POSTS" emitEvent={this.fetch}/>}
+                    {posts.length > 0 &&
                     <>
-                        {this.props.posts.map((post, index) => {
+                        {posts.map((post, index) => {
                             return <ListItem key={index} title={post.title} desc={post.body}/>
                         })}
                     </>
